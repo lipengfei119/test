@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿淘宝侧边栏</title>
+    <style>
+    .w{
+        width: 1190px;
+        margin: auto;
+
+    }
+    .banner{
+        position:absolute;
+        width: 30px;
+        height:500px;
+        background-color: aqua;
+        top:300px;
+        right: 100px;
+    }
+    header{
+        height: 300px;
+        background-color: pink;
+    }
+    div{
+        height: 1200px;
+        background-color: goldenrod;
+    }
+    footer{
+        height: 500px;
+        background-color: #666;
+        
+    }
+    .top{
+        position: absolute;
+        bottom:5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <a class="top" href="#">top</a>
+    </div>
+    <header class="w">
+
+    </header>
+    <div class="w">
+    </div>
+    <footer class="w">
+
+    </footer>
+    <script>
+    var header = document.querySelector('header');
+    var banner = document.querySelector('.banner');
+    var bannerTop = banner.offsetTop;
+    document.addEventListener('scroll',function(){
+        if(window.pageYOffset>=bannerTop){
+            // console.log(window.pageYOffset);
+            // console.log(bannerTop);
+            banner.style.position = 'fixed';
+            banner.style.top = 8 +'px';
+        }
+        else{
+            banner.style.position = 'absolute';
+            banner.style.top = 300 +'px';
+        }
+    })
+    </script>
+</body>
+</html>
